@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    
+    
+     .view{
+         display:block; 
+         width:18%;
+         margin:10px 2%;
+         color:white;
+         background:blue;
+         float:left;
+         padding:10px;
+
+     }
+
+     #left:hover ~ .cube {
+         perspective-origin:left;
+     }
+
+     #right:hover ~ .cube {
+         perspective-origin:right;
+     }
+     
+     #top:hover ~ .cube {
+         perspective-origin:top;
+     }
+     
+     #bottom:hover ~ .cube {
+         perspective-origin:bottom;
+     }
+     #rotate-cube:hover ~ .cube {
+         transform: translate(-50%, -50%) translateZ(-200px) rotateY(180deg) ;
+         
+         transition:5s
+     }
+    
+    .cube { 
+        width:300px;
+        height:300px;
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%) translateZ(-150px);
+        perspective:800px;
+        transition: 1s; 
+        transform-style: preserve-3d;
+
+    }
+
+    .cube div {
+         height:300px;
+         position:absolute;
+         width:300px;
+         font-size:40px;
+         color:white;
+         text-align:center;
+         transform-style:preserve-3d;
+    }
+
+    .right { 
+         background: rgba(10, 102, 12, 0.5);
+         transform:rotateY(90deg) translateZ(150px); 
+         
+         
+    }
+
+    .top{
+        background: rgba(120, 75, 75, 0.5);
+        transform:rotateX(90deg) translateZ(150px); 
+    }
+
+    .left{
+        background: rgba(210, 100, 100, 0.5);
+        transform: rotateY(-90deg)   translateZ(150px) ;
+        
+    }
+    
+   .back{
+        background:  rgba(150, 150, 150, 0.5);
+        transform: translateZ(-150px);
+        
+   }
+   .bottom{
+       
+        background: rgba(150, 80, 80, 0.5);
+        transform: rotateX(-90deg) translateZ(150px);
+       
+   }
+
+   .front{
+        background: rgba(100, 50, 50, 0.5);
+        transform: rotateX(0deg) translateZ(150px) ;
+        
+   }
+
+    </style>
+
+</head>
+<body>
+    
+   <div class="container"> 
+    <div class='view' id="left">from left</div>
+    <div class='view' id="right">from right</div>
+    <div class='view' id="bottom">from bottom</div>
+    <div class='view' id="top">from top</div>
+    <div class='view' id="rotate-cube">rotate</div>
+
+    <div class="cube">
+    <div class="top">top</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+    <div class="back">back</div>
+    <div class="bottom">bottom</div>
+    <div class="front">front</div>
+</div>
+<div class="clearfix">
+    .
+</div>
+</div> 
+ 
+    
+</body>
+</html>
